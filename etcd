@@ -41,3 +41,5 @@ and run this command
 if i want to enabele cmd inside the node then we will peste the token 
 and create the simple pod (oc run pod --image=redis)
 oc move the all file inside the pod with path ( oc cp /home/core/raj/filename podname:/tmp
+then we goes inside the pod (for check)
+and we will run this cmd on bastion-host (oc rsync pod1:/tmp . )
