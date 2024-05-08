@@ -37,5 +37,7 @@ sh-4.4# exit
 and we will openen the secend terminal fist will we ssh there 
 and run this command 
 #scp core@(master-ip):/home/core/raj/snapshot_2024-05-08_054225.db . (we will give the path and and de path) 
-(II) we well enabele the oc command inside node 
+(II) Method  we well enabele the oc command inside node 
 if i want to enabele cmd inside the node then we will peste the token 
+and create the simple pod (oc run pod --image=redis)
+oc move the all file inside the pod with path ( oc cp /home/core/raj/filename podname:/tmp
