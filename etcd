@@ -34,4 +34,6 @@ sh-4.4# cd /home/core/raj
 sh-4.4# ls
 snapshot_2024-05-08_054225.db  static_kuberesources_2024-05-08_054225.tar.gz
 sh-4.4# exit 
-
+and we will openen the secend terminal fist will we ssh there 
+and run this command 
+#scp core@(master-ip):/home/core/raj/snapshot_2024-05-08_054225.db . (we will give the path and and de path)
