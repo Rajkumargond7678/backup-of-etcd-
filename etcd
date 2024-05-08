@@ -2,16 +2,16 @@
 ]0;lab-user@bastion:~[lab-user@bastion ~]$ oc get node
 NAME                                         STATUS   ROLES           AGE   VERSION
 ip-10-0-179-249.us-east-2.compute.internal   Ready    master,worker   16h   v1.23.5+8471591
-]0;lab-user@bastion:~[lab-user@bastion ~]$ oc debug /node[K[K[K[K[K[K node/ip-10-0-179-249.us-east-2.compute.internal
+]0;lab-user@bastion:~[lab-user@bastion ~]$ oc debug /(nodename)
 Starting pod/ip-10-0-179-249us-east-2computeinternal-debug ...
-To use host binaries, run `chroot /host`
+To use host binaries, run `chroot /host` (copy and paste)
 chroot /hostPod IP: 10.0.179.249
 If you don't see a command prompt, try pressing enter.
 
 [Ksh-4.4# chroot /host
-sh-4.4# /home/     usr/local/bin/cluster-backup.sh /home/core/a/ /s
+sh-4.4# usr/local/bin/cluster-backup.sh /home/core/a/ (goes to inside the directry)
 snapshot_2024-05-07_165858.db                  static_kuberesources_2024-05-07_165858.tar.gz  
-sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/a/s   raj
+sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/a/sraj
 Certificate /etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt is missing. Checking in different directory
 Certificate /etc/kubernetes/static-pod-resources/etcd-certs/configmaps/etcd-serving-ca/ca-bundle.crt found!
 found latest kube-apiserver: /etc/kubernetes/static-pod-resources/kube-apiserver-pod-6
