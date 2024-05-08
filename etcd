@@ -1,0 +1,41 @@
+Script started on 2024-05-08 05:40:52+00:00
+]0;lab-user@bastion:~[lab-user@bastion ~]$ oc get node
+NAME                                         STATUS   ROLES           AGE   VERSION
+ip-10-0-179-249.us-east-2.compute.internal   Ready    master,worker   16h   v1.23.5+8471591
+]0;lab-user@bastion:~[lab-user@bastion ~]$ oc debug /node[K[K[K[K[K[K node/ip-10-0-179-249.us-east-2.compute.internal
+Starting pod/ip-10-0-179-249us-east-2computeinternal-debug ...
+To use host binaries, run `chroot /host`
+chroot /hostPod IP: 10.0.179.249
+If you don't see a command prompt, try pressing enter.
+[Ksh-4.4# chroot /host
+sh-4.4# /home/     usr/local/bin/cluster-backup.sh /home/core/a/ /s
+snapshot_2024-05-07_165858.db                  static_kuberesources_2024-05-07_165858.tar.gz  
+sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/a/s   raj
+Certificate /etc/kubernetes/static-pod-certs/configmaps/etcd-serving-ca/ca-bundle.crt is missing. Checking in different directory
+Certificate /etc/kubernetes/static-pod-resources/etcd-certs/configmaps/etcd-serving-ca/ca-bundle.crt found!
+found latest kube-apiserver: /etc/kubernetes/static-pod-resources/kube-apiserver-pod-6
+found latest kube-controller-manager: /etc/kubernetes/static-pod-resources/kube-controller-manager-pod-10
+found latest kube-scheduler: /etc/kubernetes/static-pod-resources/kube-scheduler-pod-9
+found latest etcd: /etc/kubernetes/static-pod-resources/etcd-pod-5
+etcdctl is already installed
+{"level":"info","ts":"2024-05-08T05:42:26.570Z","caller":"snapshot/v3_snapshot.go:65","msg":"created temporary db file","path":"/home/core/raj/snapshot_2024-05-08_054225.db.part"}
+{"level":"info","ts":"2024-05-08T05:42:26.576Z","logger":"client","caller":"v3/maintenance.go:211","msg":"opened snapshot stream; downloading"}
+{"level":"info","ts":"2024-05-08T05:42:26.576Z","caller":"snapshot/v3_snapshot.go:73","msg":"fetching snapshot","endpoint":"https://10.0.179.249:2379"}
+{"level":"info","ts":"2024-05-08T05:42:27.030Z","logger":"client","caller":"v3/maintenance.go:219","msg":"completed snapshot read; closing"}
+{"level":"info","ts":"2024-05-08T05:42:27.261Z","caller":"snapshot/v3_snapshot.go:88","msg":"fetched snapshot","endpoint":"https://10.0.179.249:2379","size":"89 MB","took":"now"}
+{"level":"info","ts":"2024-05-08T05:42:27.261Z","caller":"snapshot/v3_snapshot.go:97","msg":"saved","path":"/home/core/raj/snapshot_2024-05-08_054225.db"}
+Snapshot saved at /home/core/raj/snapshot_2024-05-08_054225.db
+Deprecated: Use `etcdutl snapshot status` instead.
+
+{"hash":504589024,"revision":85496,"totalKey":8615,"totalSize":88797184}
+snapshot db and kube resources are successfully saved to /home/core/raj
+sh-4.4# cd /home/core/raj
+sh-4.4# ls
+snapshot_2024-05-08_054225.db  static_kuberesources_2024-05-08_054225.tar.gz
+sh-4.4# exit
+sh-4.4# exit
+
+Removing debug pod ...
+]0;lab-user@bastion:~[lab-user@bastion ~]$ exit
+
+Script done on 2024-05-08 05:43:00+00:00
