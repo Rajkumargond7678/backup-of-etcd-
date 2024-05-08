@@ -8,7 +8,7 @@ To use host binaries, run `chroot /host` (copy and paste)
 chroot /hostPod IP: 10.0.179.249
 If you don't see a command prompt, try pressing enter.
 
-[Ksh-4.4# chroot /host
+sh-4.4# chroot /host
 sh-4.4# usr/local/bin/cluster-backup.sh /home/core/a/ (goes to inside the directry)
 snapshot_2024-05-07_165858.db                  static_kuberesources_2024-05-07_165858.tar.gz  
 sh-4.4# /usr/local/bin/cluster-backup.sh /home/core/a/sraj
@@ -33,5 +33,5 @@ snapshot db and kube resources are successfully saved to /home/core/raj
 sh-4.4# cd /home/core/raj
 sh-4.4# ls
 snapshot_2024-05-08_054225.db  static_kuberesources_2024-05-08_054225.tar.gz
-sh-4.4# exit for out 
+sh-4.4# exit 
 
